@@ -13,8 +13,12 @@ export const SmurfProvider = props => {
         setSmurfs([...smurfs, smurf]);
     }
 
+    const setSmurfsFromDB = smurfsToAdd =>{
+        setSmurfs([...smurfsToAdd]);
+    }
+
     return (
-        <SmurfContext.Provider value={{smurfs, addSmurf}}>
+        <SmurfContext.Provider value={{smurfs, addSmurf, setSmurfsFromDB}}>
             {props.children}
         </SmurfContext.Provider>
     );

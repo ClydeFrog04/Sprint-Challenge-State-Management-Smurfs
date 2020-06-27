@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./AddSmurfForm.css";
 import {SmurfContext} from "../SmurfContext";
 import axios from "axios";
@@ -12,7 +12,17 @@ const AddSmurfForm = () => {
         height: "",
     });
 
-    const {smurfs, addSmurf} = useContext(SmurfContext);
+    const {smurfs, addSmurf, setSmurfsFromDB} = useContext(SmurfContext);
+
+    useEffect(() => {
+        //get data from server
+        axios.get("http://localhost:3333/smurfs")
+            .then(res => {
+                console.log(res);
+                setSmurfsFromDB([...res.data]);
+            })
+            .catch(console.log);
+    }, []);
 
     const handleChange = e => {
         setFormData({
