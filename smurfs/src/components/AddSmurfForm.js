@@ -12,7 +12,7 @@ const AddSmurfForm = () => {
         height: "",
     });
 
-    const [smurfs, setSmurfs] = useContext(SmurfContext);
+    const {smurfs, addSmurf} = useContext(SmurfContext);
 
     const handleChange = e => {
         setFormData({
@@ -34,7 +34,7 @@ const AddSmurfForm = () => {
         e.preventDefault();
 
         const newSmurf = {...formData, age: parseInt(formData.age, 10)};
-        setSmurfs({...smurfs, newSmurf});
+        addSmurf({newSmurf});
         axios.post("http://localhost:3333/smurfs", newSmurf)
             .then(console.log)
             .catch(console.log);

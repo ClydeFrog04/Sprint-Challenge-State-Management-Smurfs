@@ -23,10 +23,19 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+Context helps solve the problem of state management in web apps.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+The store in redux is the place where all of the state data is kept, so we don't have to sort through files to find where pieces of state are. Actions are the definition for what to do with the state data at certain points in our app. Reducers are the way to "reduce" actions and state to get a new state as output.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+Application state is state that persists throughout the application. Things like shopping carts would be application state. Component state persists only in the component that made it, so things like a form might have component state.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+Redux thunk allows us to make asynchronous redux actions.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+I like context better than redux because it is a lot cleaner. It is much easier to see where exactly everything lives and what it does. I used context on the last build week and we defined our state and context's in a single file which made it so much easier to see all of our state at one time. Redux is still fun to work with though, and I don't find it overly complex, just moreso than context.
 
 ## Project Set Up
 
